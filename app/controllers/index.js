@@ -70,10 +70,10 @@ var slideCards = Alloy.createWidget("SlideCards", {
 	}],
 	style : {
 		height : "400dp",
-		width : "300dp",
+		width : "800dp",
 		child : {
 			//height : "200dp",
-			width : "100dp"
+			width : "300dp"
 		},
 		spacing : [ "10dp", "10dp" ] // top/bottom, left/right
 	}
