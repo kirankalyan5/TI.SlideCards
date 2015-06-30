@@ -1,5 +1,7 @@
 
 ".heroContainer":{
-	"scrollType":"horizontal",
-	"backgroundColor": "#ccc"
+	"scrollType": "horizontal",
+	"layout": "horizontal",
+	"backgroundColor": "#ccc",
+	"scrollingEnabled":true
 }
