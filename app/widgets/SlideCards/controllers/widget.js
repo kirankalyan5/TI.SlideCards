@@ -1,5 +1,7 @@
 var args = arguments[0];
+var scrollView = $.heroContainer;
 var cards = args.cards;
+var style = args.style;
 
 (function() {
 	/***
@@ -12,6 +14,17 @@ var cards = args.cards;
 		})
 	};
 	
+	//Apply Configured Styles
+	var _applyConfigStyles = function (options) {
+		var style = {
+			height: options.height || Ti.UI.SIZE,
+			width: options.width || Ti.UI.FILL
+		};
+		
+		scrollView.setHeight(style.height);
+		scrollView.setWidth(style.width);
+	};
+	
 	//Create _buildCards
 	var _buildCards = function (cards) {
 		console.log(cards);
@@ -19,6 +32,7 @@ var cards = args.cards;
 	
 	//Initialize Method
 	var init = function () {
+		_applyConfigStyles(style);
 		_buildCards(cards);
 	};
 	
