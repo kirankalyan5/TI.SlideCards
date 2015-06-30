@@ -1,0 +1,13 @@
+{
+	"id": "SlideCards",
+	"name": "SlideCards",
+	"description" :"It's a Titanium widget which displays list of cards along with collapsible parent and child view.",
+	"author": "KiranKalyan",
+	"version": "1.0",
+	"copyright":"Copyright (c) 2015",
+	"license":"Public Domain",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"2.1",
+	"tags":"",
+	"platforms":"android,blackberry,ios,mobileweb"
+}

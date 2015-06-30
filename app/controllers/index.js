@@ -1,5 +1,10 @@
-function doClick(e) {
-    alert($.label.text);
-}
+//Instantiate slideCards
+var slideCards = Alloy.createWidget("SlideCards", {
+	cards : [ {
+		parentView: "",
+		childView: ""
+	} ]
+});
 
-$.index.open();
+$.container.add(slideCards.getView());
+$.container.open();
