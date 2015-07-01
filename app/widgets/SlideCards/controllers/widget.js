@@ -58,26 +58,21 @@ var style = args.style;
 				top : "5dp"
 
 			});
-		
+			var animateLeft = Ti.UI.createAnimation({
+				left : 300,
+				visible : true,
+				duration : 8000,
+				delay : 5000
+				
+			});
 			
 			card.childView.add(closeLabel);
 			panel.add(card.parentView);
 			panel.add(card.childView);
 			scrollView.add(panel);
 			card.parentView.addEventListener('click', function() {
-				var animation = Ti.UI.createAnimation({
-					left : 300,
-					visible : true,
-					duration : "5000",
-					delay : 5000
-					
-					
-					
-					
-				});
-				card.childView.animate(animation);
+				card.childView.animate(animateLeft);
                 panel.width = "700dp";
-
 			});
 			closeLabel.addEventListener('click', function() {
 				card.childView.visible = false;
