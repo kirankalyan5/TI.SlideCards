@@ -1,0 +1,124 @@
+
+/*Plan List View styles - VS*/
+
+".planInfo":{
+	left:'0',
+	top:'0',
+	width:Titanium.UI.FILL,
+	height:'140dp'
+}
+".planData":{
+	layout:'horizontal',
+	top:'15',
+	left:'0'
+}
+".monthlyPremiumContainer":{
+	layout:'vertical',
+	top:'70',
+	left:'0',
+	height:Ti.UI.SIZE,
+}
+"#premiumAmount":{
+	color: "#FFFFFF",
+	left: '10dp',
+	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+	width:Titanium.UI.FILL
+}
+".planCostView":{
+	layout:'vertical',
+	left:'0',
+	top:'140',
+	backgroundColor:"#FFFFFF",
+	height:'340dp'
+}
+".docVisitContainer":{
+	layout:'vertical',
+	left:'0',
+	top:'10',
+}
+".prescContainer":{
+	layout:'vertical',
+	left:'0',
+	top:'10'
+}
+	
+".maxOutOfPocketContainer":{
+	layout:'vertical',
+	left:'0',
+	top:'10'
+}
+".paramCost" : {
+	top:'10dp',
+	color: Alloy.Globals.BODY_COPY_COLOR,
+	left: '10dp',
+	font : {
+		fontSize: '20dp'
+	},
+	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+	width:Titanium.UI.FILL
+}
+
+".paramName" : {
+	top:'0dp',
+	color: Alloy.Globals.BODY_COPY_COLOR,
+	left: '10dp',
+	font : {
+		fontSize: '15dp'
+	},
+	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+	width:Titanium.UI.FILL
+}
+
+".planName" : {
+    top:'0dp',
+	color: "#FFFFFF",
+	left: '10dp',
+	font : {
+		fontSize: '16dp',
+		fontWeight: 'bold',
+		wordWrap:'true'	
+	},
+	width:'180dp',
+}
+
+".planType" : {
+	top:'10dp',
+	color:"#FFFFFF",
+	font : {
+		fontSize: '16dp',
+		wordWrap:'true'
+	},
+	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+}
+"#monthlyPremiumAmt":{
+	color: "#FFFFFF",
+	left:'10dp',
+	font : {
+		fontSize: '28dp',
+	},
+	textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+	width:Titanium.UI.FILL
+}
+"#metalTypeCont":{
+	width:Ti.UI.SIZE,
+	textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
+	right:'5dp',
+	left:'10dp',
+	borderRadius:"15dp"
+}
+".horizontalLine":{
+	backgroundColor:"#666666",
+	height:"1dp",
+	width:"240dp",
+	left:"10dp",
+	top:"15dp"
+}
+".planDescContainer":{
+	top:"12dp",
+}
+"#planDescription":{
+	font : {
+		fontSize: '16dp',
+	},
+}
+

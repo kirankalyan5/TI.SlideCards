@@ -1,0 +1,38 @@
+<Alloy>
+	<!--code starts for plan list-->
+	<View>
+		<View id="planDetailsContainer" class="planInfo">
+			<View class="planData">
+				<Label id="planCompany" class="planName"></Label>
+				<View id="metalTypeCont">
+					<Label id="planMetal" class="planType"></Label>
+				</View>
+
+			</View>
+			<View class="monthlyPremiumContainer">
+				<Label id="monthlyPremiumAmt"></Label>
+				<Label id="premiumAmount" class="paramName">monthly payment</Label>
+			</View>
+		</View>
+		<View class="planCostView">
+			<View class="planDescContainer">
+				<Label id="planDescription" class="paramCost"></Label>
+			</View>
+			<View class="horizontalLine"></View>
+			<View class="docVisitContainer">
+				<Label id="inNetworkCost" class="paramCost"></Label>
+				<Label class="paramName">doctor visits(in-network)</Label>
+			</View>
+			<View class="prescContainer">
+				<Label id="genericMedicationCost" class="paramCost">no charge</Label>
+				<Label class="paramName ">prescription medication (generic)</Label>
+			</View>
+			<View class="maxOutOfPocketContainer">
+				<Label id="maxOutofpocketCost" class="paramCost">n/a</Label>
+				<Label class="paramName ">max out-of-pocket costs</Label>
+			</View>
+		</View>
+
+	</View>
+	<!--code ends for plan list-->
+</Alloy>
