@@ -4,7 +4,7 @@ var slideCards = Alloy.createWidget("SlideCards", {
 		parentView : Ti.UI.createView({
 			left : 0,
 			height : "450dp",
-			width : "250dp",
+			width : "300dp",
 			backgroundColor : "red"
 		}),
 		childView : Ti.UI.createView({
@@ -17,52 +17,52 @@ var slideCards = Alloy.createWidget("SlideCards", {
 		parentView : Ti.UI.createView({
 			left : 0,
 			height : "450dp",
-			width : "250dp",
+			width : "300dp",
 			backgroundColor : "red"
 		}),
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "100dp",
+			width : "0dp",
 			backgroundColor : "yellow"
 		})
 	},{
 		parentView : Ti.UI.createView({
 			left : 0,
 			height : "450dp",
-			width : "250dp",
+			width : "300dp",
 			backgroundColor : "red"
 		}),
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "100dp",
+			width : "0dp",
 			backgroundColor : "yellow"
 		})
 	},{
 		parentView : Ti.UI.createView({
 			left : 0,
 			height : "450dp",
-			width : "250dp",
+			width : "300dp",
 			backgroundColor : "red"
 		}),
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "100dp",
+			width : "0dp",
 			backgroundColor : "yellow"
 		})
 	},{
 		parentView : Ti.UI.createView({
 			left : 0,
 			height : "450dp",
-			width : "250dp",
+			width : "300dp",
 			backgroundColor : "red"
 		}),
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "100dp",
+			width : "0dp",
 			backgroundColor : "yellow"
 		})
 	}],
@@ -71,7 +71,7 @@ var slideCards = Alloy.createWidget("SlideCards", {
 		width : "800dp",
 		child : {
 			//height : "200dp",
-			width : "350dp"
+			width : "300dp"
 		},
 		spacing : [ "10dp", "10dp" ] // top/bottom, left/right
 	}

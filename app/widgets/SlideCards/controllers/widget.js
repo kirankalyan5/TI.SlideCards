@@ -43,30 +43,38 @@ var style = args.style;
 
 		// Iterate and build the card block
 		_.each(cards, function(card, index) {
-			 var panel = Ti.UI.createView({
-			 height: height + "dp" || Ti.UI.SIZE,
-			 width: width + "dp" || Ti.UI.SIZE,
-			 top: "10dp",
-			 left: "10dp",
-			 right: "10dp",
-			 bottom: "10dp",
-			 backgroundColor: "blue"
-			 });
-//			var planListLayout = Alloy.createController('singleSlider', {});
-//			var planView = planListLayout.getView();
-			 panel.add(card.parentView);
-			 panel.add(card.childView);
+			var panel = Ti.UI.createView({
+				height : height + "dp" || Ti.UI.SIZE,
+				width : width + "dp" || Ti.UI.SIZE,
+				top : "10dp",
+				left : "10dp",
+				right : "10dp",
+				bottom : "10dp",
+				backgroundColor : "blue"
+			});
+			var closeLabel = Ti.UI.createLabel({
+				text:"X",
+				right:"5dp",
+				top : "5dp"
+				
+			});
+			card.childView.add(closeLabel);
+			panel.add(card.parentView);
+			panel.add(card.childView);
 			scrollView.add(panel);
-			card.parentView.addEventListener('click',function(){
-				panel.width = "600dp";
+			card.parentView.addEventListener('click', function() {
+				panel.width = "700dp";
 				card.childView.width = "400dp";
+			});
+			closeLabel.addEventListener('click',function(){
+				panel.width = "350dp";
+				card.childView.width = "0dp";
 			});
 
 		});
 
 	};
-	
-   
+
 	// Initialize Method
 	var init = function() {
 		_applyConfigStyles(style);
