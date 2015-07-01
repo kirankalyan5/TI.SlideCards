@@ -42,7 +42,7 @@ var style = args.style;
 				- (offsetWidth * 2);
 
 		// Iterate and build the card block
-		_.each(cards, function(card, index) {
+		_.each(cards, function(card) {
 			var panel = Ti.UI.createView({
 				height : height + "dp" || Ti.UI.SIZE,
 				width : width + "dp" || Ti.UI.SIZE,
@@ -67,7 +67,7 @@ var style = args.style;
 				card.childView.width = "400dp";
 			});
 			closeLabel.addEventListener('click',function(){
-				panel.width = "350dp";
+				panel.width = "300dp";
 				card.childView.width = "0dp";
 			});
 

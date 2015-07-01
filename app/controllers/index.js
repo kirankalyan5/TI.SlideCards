@@ -39,32 +39,6 @@ var slideCards = Alloy.createWidget("SlideCards", {
 			width : "0dp",
 			backgroundColor : "yellow"
 		})
-	},{
-		parentView : Ti.UI.createView({
-			left : 0,
-			height : "450dp",
-			width : "300dp",
-			backgroundColor : "red"
-		}),
-		childView : Ti.UI.createView({
-			right : 0,
-			height : "450dp",
-			width : "0dp",
-			backgroundColor : "yellow"
-		})
-	},{
-		parentView : Ti.UI.createView({
-			left : 0,
-			height : "450dp",
-			width : "300dp",
-			backgroundColor : "red"
-		}),
-		childView : Ti.UI.createView({
-			right : 0,
-			height : "450dp",
-			width : "0dp",
-			backgroundColor : "yellow"
-		})
 	}],
 	style : {
 		height : "500dp",
