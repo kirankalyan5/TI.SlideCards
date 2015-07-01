@@ -50,7 +50,7 @@ var style = args.style;
 				left : "10dp",
 				right : "10dp",
 				bottom : "10dp",
-				backgroundColor : "blue"
+				backgroundColor : "#9AAC6A"
 			});
 			var closeLabel = Ti.UI.createLabel({
 				text:"X",
@@ -63,10 +63,12 @@ var style = args.style;
 			panel.add(card.childView);
 			scrollView.add(panel);
 			card.parentView.addEventListener('click', function() {
+				card.childView.animate({duration:5000});
 				panel.width = "700dp";
 				card.childView.width = "400dp";
 			});
 			closeLabel.addEventListener('click',function(){
+				card.childView.animate({duration:500});
 				panel.width = "300dp";
 				card.childView.width = "0dp";
 			});
