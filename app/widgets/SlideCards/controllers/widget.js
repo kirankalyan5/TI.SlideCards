@@ -53,24 +53,35 @@ var style = args.style;
 				backgroundColor : "#9AAC6A"
 			});
 			var closeLabel = Ti.UI.createLabel({
-				text:"X",
-				right:"5dp",
+				text : "X",
+				right : "15dp",
 				top : "5dp"
-				
+
 			});
+		
+			
 			card.childView.add(closeLabel);
 			panel.add(card.parentView);
 			panel.add(card.childView);
 			scrollView.add(panel);
 			card.parentView.addEventListener('click', function() {
-				card.childView.animate({duration:5000});
-				panel.width = "700dp";
-				card.childView.width = "400dp";
+				var animation = Ti.UI.createAnimation({
+					left : 300,
+					visible : true,
+					duration : "5000",
+					delay : 5000
+					
+					
+					
+					
+				});
+				card.childView.animate(animation);
+                panel.width = "700dp";
+
 			});
-			closeLabel.addEventListener('click',function(){
-				card.childView.animate({duration:500});
-				panel.width = "300dp";
-				card.childView.width = "0dp";
+			closeLabel.addEventListener('click', function() {
+				card.childView.visible = false;
+                panel.width = "300dp";
 			});
 
 		});

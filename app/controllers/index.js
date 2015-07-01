@@ -12,8 +12,9 @@ var slideCards = Alloy.createWidget("SlideCards", {
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "0dp",
+			width : "400dp",
 			backgroundColor : "#616B42",
+			visible : false
 			
 		})
 	},{
@@ -28,8 +29,9 @@ var slideCards = Alloy.createWidget("SlideCards", {
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "0dp",
+			width : "400dp",
 			backgroundColor : "#616B42",
+			visible : false
 			
 		})
 	},{
@@ -44,8 +46,9 @@ var slideCards = Alloy.createWidget("SlideCards", {
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "0dp",
+			width : "400dp",
 			backgroundColor : "#616B42",
+			visible : false
 			
 		})
 	},{
@@ -53,15 +56,16 @@ var slideCards = Alloy.createWidget("SlideCards", {
 			left : 10,
 			height : "450dp",
 			width : "300dp",
-			backgroundColor : "#FFFFFF",
+			backgroundColor : "#FFFFFF"
 			
 			
 		}),
 		childView : Ti.UI.createView({
 			right : 0,
 			height : "450dp",
-			width : "0dp",
+			width : "400dp",
 			backgroundColor : "#616B42",
+			visible : false
 			
 		})
 	}],
