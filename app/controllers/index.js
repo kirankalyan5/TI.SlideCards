@@ -2,52 +2,44 @@
 var slideCards = Alloy.createWidget("SlideCards", {
 	cards : [ {
 		parentView : Ti.UI.createView({
-			left : "0dp",
 			height : "450dp",
 			width : "300dp",
 			backgroundColor : "#C69E40",
 		}),
 		childView : Ti.UI.createView({
-			left : 0,
 			height : "450dp",
 			width : "400dp",
 			backgroundColor : "#616B42"
 		})
 	},{
 		parentView : Ti.UI.createView({
-			left : "0dp",
 			height : "450dp",
 			width : "300dp",
 			backgroundColor : "#BA6C41",
 		}),
 		childView : Ti.UI.createView({
-			left : 0,
 			height : "450dp",
 			width : "400dp",
 			backgroundColor : "#616B42"
 		})
 	},{
 		parentView : Ti.UI.createView({
-			left : "0dp",
 			height : "450dp",
 			width : "300dp",
 			backgroundColor : "#0D8F97",
 		}),
 		childView : Ti.UI.createView({
-			left : 0,
 			height : "450dp",
 			width : "400dp",
 			backgroundColor : "#616B42",
 		})
 	},{
 		parentView : Ti.UI.createView({
-			left : "0dp",
 			height : "450dp",
 			width : "300dp",
 			backgroundColor : "#FFFFFF"
 		}),
 		childView : Ti.UI.createView({
-			left : 0,
 			height : "450dp",
 			width : "400dp",
 			backgroundColor : "#616B42"

@@ -58,41 +58,53 @@ var style = args.style;
 				top : "5dp"
 
 			});
-			//Apply style for childView -- visible, left - (child view width - width of parent view) 
-			
-		
+			// Apply style for childView -- visible, left - (child view width -
+			// width of parent view)
+		   var panelWidth = 	parseInt(card.parentView.getWidth().replace(/\D/g, '')) + parseInt(card.childView.getWidth().replace(/\D/g, '')) ;
+		   var childCardLeft = parseInt(card.parentView.getWidth().replace(/\D/g, '')) - parseInt(card.childView.getWidth().replace(/\D/g, '')) ;
 			card.childView.setVisible(false);
+			card.childView.setLeft(childCardLeft);
+			card.parentView.setLeft(0);
+			card.childView.setZIndex(0);
+			card.parentView.setZIndex(1);
 			
+			panel.setWidth(parseInt(card.parentView.getWidth().replace(/\D/g, '')));
+			console.log(panel.getWidth());
 			// animate the child view to slide left: open
 			var animateChildOpen = Ti.UI.createAnimation({
-				left : 300, 
-				duration : 8000,
-				delay : 5000
+				left : card.parentView.getWidth(), 
+				duration : 800
 			});
-			//animate the child view to slide right: close
+			// animate the child view to slide right: close
 			var animateChildClose = Ti.UI.createAnimation({
-				right:-300,
-				duration : 8000,
-				delay : 5000,
+				left:childCardLeft + "dp",
+				duration : 800
 			});
+			//animate panel width
+			var animatePanelExpand = Ti.UI.createAnimation({
+				width: panelWidth,
+				duration: 800
+			});
+			console.log("*********"+panelWidth);
 			card.childView.add(closeLabel);
 			panel.add(card.parentView);
 			panel.add(card.childView);
 			scrollView.add(panel);
 			
 			card.parentView.addEventListener('click', function() {
-				panel.animate({width : "700dp"}); //dynamic
+                card.childView.setVisible(true);
 				card.childView.animate(animateChildOpen);
-				card.childView.setVisible(true);
+				panel.animate(animatePanelExpand, function () {
+					console.log(panel.getWidth());
+				});
 				
 			});
 			closeLabel.addEventListener('click', function() {
-				panel.animate({width : "300dp"}); //dynamic
-				card.childView.animate(animateChildClose);
-				card.childView.visible = false;
 				
-				
-				
+				card.childView.animate(animateChildClose,function(){
+					panel.setWidth(card.parentView.getWidth());
+					card.childView.setVisible(false);
+				});
 				
 			});
 
