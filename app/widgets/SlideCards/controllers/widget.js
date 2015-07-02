@@ -47,7 +47,7 @@ var style = args.style;
 				height : height + "dp" || Ti.UI.SIZE,
 				width : width + "dp" || Ti.UI.SIZE,
 				top : "10dp",
-				left : "10dp",
+				left : "10dp",  
 				right : "10dp",
 				bottom : "10dp",
 				backgroundColor : "#9AAC6A"
@@ -58,25 +58,42 @@ var style = args.style;
 				top : "5dp"
 
 			});
-			var animateLeft = Ti.UI.createAnimation({
-				left : 300,
-				visible : true,
+			//Apply style for childView -- visible, left - (child view width - width of parent view) 
+			
+		
+			card.childView.setVisible(false);
+			
+			// animate the child view to slide left: open
+			var animateChildOpen = Ti.UI.createAnimation({
+				left : 300, 
 				duration : 8000,
 				delay : 5000
-				
 			});
-			
+			//animate the child view to slide right: close
+			var animateChildClose = Ti.UI.createAnimation({
+				right:-300,
+				duration : 8000,
+				delay : 5000,
+			});
 			card.childView.add(closeLabel);
 			panel.add(card.parentView);
 			panel.add(card.childView);
 			scrollView.add(panel);
+			
 			card.parentView.addEventListener('click', function() {
-				card.childView.animate(animateLeft);
-                panel.width = "700dp";
+				panel.animate({width : "700dp"}); //dynamic
+				card.childView.animate(animateChildOpen);
+				card.childView.setVisible(true);
+				
 			});
 			closeLabel.addEventListener('click', function() {
+				panel.animate({width : "300dp"}); //dynamic
+				card.childView.animate(animateChildClose);
 				card.childView.visible = false;
-                panel.width = "300dp";
+				
+				
+				
+				
 			});
 
 		});
