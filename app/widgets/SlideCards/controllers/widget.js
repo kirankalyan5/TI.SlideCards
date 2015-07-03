@@ -5,14 +5,9 @@ var style = args.style;
 
 (function() {
 	/***************************************************************************
-	 * @method _style
-	 * @desc contains style for each elements
+	 * @method _applyConfigStyles
+	 * @desc applies style for globals elements
 	 */
-	var _style = {
-		heroContainer : $.createStyle({
-			classes : [ 'heroContainer' ]
-		})
-	};
 
 	// Apply Configured Styles
 	var _applyConfigStyles = function(options) {
@@ -24,8 +19,10 @@ var style = args.style;
 		scrollView.setHeight(style.height);
 		scrollView.setWidth(style.width);
 	};
-
-	// Create _buildCards
+	/***************************************************************************
+	 * @method _buildCard
+	 * @desc Builds the parent and the child cards.
+	 */
 	var _buildCards = function(cards, style) {
 		var cardStyle = {
 			height : style.child ? style.child.height : undefined,
@@ -47,7 +44,7 @@ var style = args.style;
 				height : height + "dp" || Ti.UI.SIZE,
 				width : width + "dp" || Ti.UI.SIZE,
 				top : "10dp",
-				left : "10dp",  
+				left : "10dp",
 				right : "10dp",
 				bottom : "10dp",
 				backgroundColor : "#9AAC6A"
@@ -58,61 +55,66 @@ var style = args.style;
 				top : "5dp"
 
 			});
-			// Apply style for childView -- visible, left - (child view width -
-			// width of parent view)
-		   var panelWidth = 	parseInt(card.parentView.getWidth().replace(/\D/g, '')) + parseInt(card.childView.getWidth().replace(/\D/g, '')) ;
-		   var childCardLeft = parseInt(card.parentView.getWidth().replace(/\D/g, '')) - parseInt(card.childView.getWidth().replace(/\D/g, '')) ;
+
+			var panelWidth = parseInt(card.parentView.getWidth().replace(/\D/g,
+					''))
+					+ parseInt(card.childView.getWidth().replace(/\D/g, ''));
+			var childCardLeft = parseInt(card.parentView.getWidth().replace(
+					/\D/g, ''))
+					- parseInt(card.childView.getWidth().replace(/\D/g, ''));
 			card.childView.setVisible(false);
 			card.childView.setLeft(childCardLeft);
 			card.parentView.setLeft(0);
 			card.childView.setZIndex(0);
 			card.parentView.setZIndex(1);
-			
-			panel.setWidth(parseInt(card.parentView.getWidth().replace(/\D/g, '')));
+
+			panel.setWidth(parseInt(card.parentView.getWidth().replace(/\D/g,
+					'')));
 			console.log(panel.getWidth());
 			// animate the child view to slide left: open
 			var animateChildOpen = Ti.UI.createAnimation({
-				left : card.parentView.getWidth(), 
+				left : card.parentView.getWidth(),
 				duration : 800
 			});
 			// animate the child view to slide right: close
 			var animateChildClose = Ti.UI.createAnimation({
-				left:childCardLeft + "dp",
+				left : childCardLeft + "dp",
 				duration : 800
 			});
-			//animate panel width
+			// animate panel width
 			var animatePanelExpand = Ti.UI.createAnimation({
-				width: panelWidth,
-				duration: 800
+				width : panelWidth,
+				duration : 800
 			});
-			console.log("*********"+panelWidth);
 			card.childView.add(closeLabel);
 			panel.add(card.parentView);
 			panel.add(card.childView);
 			scrollView.add(panel);
-			
+
 			card.parentView.addEventListener('click', function() {
-                card.childView.setVisible(true);
+				card.childView.setVisible(true);
 				card.childView.animate(animateChildOpen);
-				panel.animate(animatePanelExpand, function () {
-					console.log(panel.getWidth());
+				panel.animate(animatePanelExpand, function() {
 				});
-				
+
 			});
 			closeLabel.addEventListener('click', function() {
-				
-				card.childView.animate(animateChildClose,function(){
+
+				card.childView.animate(animateChildClose, function() {
 					panel.setWidth(card.parentView.getWidth());
 					card.childView.setVisible(false);
 				});
-				
+
 			});
 
 		});
 
 	};
 
-	// Initialize Method
+	/***************************************************************************
+	 * @method init
+	 * @desc initialize the sliderCards
+	 */
 	var init = function() {
 		_applyConfigStyles(style);
 		_buildCards(cards, style);
