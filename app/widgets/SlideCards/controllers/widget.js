@@ -52,8 +52,9 @@ var style = args.style;
 			var closeLabel = Ti.UI.createLabel({
 				text : "X",
 				right : "15dp",
-				top : "5dp"
-
+				top : "5dp",
+				color : "#FFFFFF",
+				zIndex: 99999	
 			});
 
 			var panelWidth = parseInt(card.parentView.getWidth().replace(/\D/g,
