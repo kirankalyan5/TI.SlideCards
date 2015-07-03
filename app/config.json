@@ -8,6 +8,6 @@
     "os:ios": {},
     "os:mobileweb": {},
     "dependencies": {
-        "SlideCards": "1.0"
+        "SlideCards": "1.1"
     }
 }
